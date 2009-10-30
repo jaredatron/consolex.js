@@ -1,6 +1,13 @@
 /** Console X
+  * http://github.com/deadlyicon/consolex.js
   *
-  * prevents console errors and makes IE console objects true functions
+  * By Jared Grippe <jared@jaredgrippe.com>
+  *
+  * Copyright (c) 2009 Jared Grippe
+  * Licensed under the MIT license.
+  *
+  * consolex avoids ever having to see javascript bugs in browsers that do not implement the entire
+  * firebug console suit
   *
   */
 (function() {
