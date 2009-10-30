@@ -10,7 +10,7 @@
   * firebug console suit
   *
   */
-(function() {
+(function(window) {
   window.console || (window.console = {});
 
   var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml",
@@ -25,4 +25,4 @@
           return function(){ return Function.prototype.apply.apply(method, [console,arguments]); };
         })(window.console[names[i]]);
   }
-})();
+})(this);
