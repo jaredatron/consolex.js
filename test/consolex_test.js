@@ -1,22 +1,17 @@
-var __CONSOLE_METHOD_NAMES = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml", "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"];
-new Test.Unit.Runner({
-  
-  test_that_window_console_exists: function(){
-    this.assert(window.console);
-  },
-  
-  test_that_window_console_methods_exist: function(){
-    __CONSOLE_METHOD_NAMES.each(function(name){
-      this.assert(typeof window.console[name] === 'function');
-    }, this);
-  },
-  
-  test_that_no_console_methods_raise_errors: function(){
-    __CONSOLE_METHOD_NAMES.each(function(name){
-      this.assertNothingRaised(function(){
-        window.console[name]();
-      });
-    }, this);
-  }
-  
+test("window.console is an obejct", function() {
+  equals( "object", typeof window.console, "expected typeof window.console === 'object'" );
+});
+
+$.each("log debug info warn error assert dir dirxml group groupEnd time timeEnd count trace profile profileEnd".split(/\s+/), function(i, name){
+
+  test("window.console."+name+"() should not throw an error", function() {
+    var error;
+    try{
+      window.console[name]();
+    }catch(e){
+      error = e;
+    }
+    equals(undefined, error, "expected window.console."+name+"() not to throw an error");
+  });
+
 });

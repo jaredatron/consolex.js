@@ -1,6 +1,6 @@
 #consolex.js
 
-consolex avoids ever having to see javascript bugs in browsers that do not implement the entire firebug console suit
+never see that pesky "console is not defined" error ever again!
 
 ## Supported Browsers
 -   Firefox (gecko)
